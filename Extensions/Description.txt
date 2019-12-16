@@ -1,0 +1,11 @@
+This extension copies a shareable URL of the current tab to your clipboard. Many sites include long irrelevant strings of text in the URL bar that include tracking and advertising data that aren't friendly to share. Clicking the icon or pressing Alt+C will activate this extension, and the keyboard shortcut can be changed in your chrome://extensions/shortcuts page.
+
+This extension removes the query string, and will further remove irrelevant data on supported sites to get to a short URL more appropriate for sharing.
+
+Sites currently supported for enhanced shortening:
+
+ - eBay items (removes item description from URL)
+ - Amazon items (removes item description and referrer from URL)
+ - YouTube videos (removes playlist and start time from URL)
+
+For file:// urls that are on your local hard drive, Alternative Copy will put the native path string into the clipboard, and will surround the path with quotes if it contains any spaces. For example, file:///C:/Projects/AlternativeCopy/Test%20File%20URL.txt would copy as "C:\Projects\AlternativeCopy\Test File URL.txt" (windows), and file:///Temp/AlternativeCopy/TestFile.txt would copy as /Temp/AlternativeCopy/TestFile.txt (linux, BSD, MacOS).
