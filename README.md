@@ -16,10 +16,13 @@ Sites currently supported for enhanced shortening:
 
 For file:// urls that are on your local hard drive, Alternative Copy will put the native path string into the clipboard, and will surround the path with quotes if it contains any spaces. For example, file:///C:/Projects/AlternativeCopy/Test%20File%20URL.txt would copy as "C:\Projects\AlternativeCopy\Test File URL.txt" (windows), and file:///Temp/AlternativeCopy/TestFile.txt would copy as /Temp/AlternativeCopy/TestFile.txt (linux, BSD, MacOS).
 
+### Webstore Links
+
+ - Chrome: https://chrome.google.com/webstore/detail/alternative-copy/okpfaahmakpepeoahekhiehomdiikjjg
+
 ### Version History
 
  - v1.3 2019.12.15 Fixed issue with youtube videos with dashes in their video id
  - v1.2 2019.11.14 Added Support for youtube videos
  - v1.1 2019.11.13 Added Support for local files
  - v1.0 2019.11.12 Initial Release - supports eBay and Amazon items
- 
