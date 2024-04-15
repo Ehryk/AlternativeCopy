@@ -22,6 +22,7 @@ For file:// urls that are on your local hard drive, Alternative Copy will put th
 
 ### Version History
 
+ - v1.5 2024.04.14 Removing unused permission (ClipboardRead), explicit mac keybinding
  - v1.4 2022.12.07 Removing any hashtag / anchor tag content
  - v1.3 2019.12.15 Fixed issue with youtube videos with dashes in their video id
  - v1.2 2019.11.14 Added Support for youtube videos

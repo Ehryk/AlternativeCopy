@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Alternative Copy",
   "short_name": "Alt.Copy",
-  "version": "1.4",
+  "version": "1.5",
 
   "description": "Copies a shortened shareable link of the current tab's address to the clipboard (default: Alt+C, mac: Command+C).",
   "author": "Eric Menze",
@@ -19,7 +19,6 @@
   },
 
   "permissions": [
-    "clipboardRead",
     "clipboardWrite",
     "activeTab"
   ],
