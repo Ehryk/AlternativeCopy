@@ -1,5 +1,5 @@
 # Alternative Copy
-This is a tool that can be installed as an Extension (currently supported: Chrome) to map the keyboard shortcut Alt+C to copy the current address and apply helpful formatting.
+This is a tool that can be installed as an Extension (currently supported: Chrome) to map the keyboard shortcut Alt+C (Command+C for OSX) to copy the current address and apply helpful formatting.
 
 ### Description
 
@@ -22,6 +22,7 @@ For file:// urls that are on your local hard drive, Alternative Copy will put th
 
 ### Version History
 
+ - v1.4 2022.12.07 Removing any hashtag / anchor tag content
  - v1.3 2019.12.15 Fixed issue with youtube videos with dashes in their video id
  - v1.2 2019.11.14 Added Support for youtube videos
  - v1.1 2019.11.13 Added Support for local files

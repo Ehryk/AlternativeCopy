@@ -53,12 +53,14 @@ function shortenUrl(href) {
       // eBay
       href = href.replace(/(.*\/itm\/)([^/]*)\/(.*)/, '$1$3');
       href = removeQueryString(href);
+      href = removeAnchorTag(href);
     }
     else if (host.indexOf("amazon") > -1) {
       // Amazon
       href = href.replace(/(.*:\/\/[^/]*)\/([^/]*)(\/dp\/.*)/i, '$1$3');
       href = href.replace(/(.*)(\/ref=[^?^/^&]*)(.*)/i, '$1$3');
       href = removeQueryString(href);
+      href = removeAnchorTag(href);
     }
     else if (host.indexOf("youtube") > -1) {
       // YouTube
@@ -75,6 +77,7 @@ function shortenUrl(href) {
     else {
       // Default
       href = removeQueryString(href);
+      href = removeAnchorTag(href);
     }
 }
 
