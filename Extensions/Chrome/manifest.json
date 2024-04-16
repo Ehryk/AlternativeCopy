@@ -1,8 +1,8 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Alternative Copy",
   "short_name": "Alt.Copy",
-  "version": "1.5",
+  "version": "2.0",
 
   "description": "Copies a shortened shareable link of the current tab's address to the clipboard (default: Alt+C, mac: Command+C).",
   "author": "Eric Menze",
@@ -14,7 +14,7 @@
   "offline_enabled": true,
 
   "background": {
-    "scripts": ["background.js"],
+    "service_worker": ["worker.js"],
     "persistent": false
   },
 
