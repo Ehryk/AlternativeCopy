@@ -20,17 +20,17 @@ async function getCurrentTab() {
 
 // Listen for action
 chrome.action.onClicked.addListener((tab) => {
-  lastResult = shortenUrl(tab.url);
-  console.log(`Alternative Copy Invoked: ${lastResult}`);
+  let result = lastResult = shortenUrl(tab.url);
+  console.log(`Alternative Copy Invoked: ${result}`);
   chrome.scripting.executeScript({
     target: {tabId: tab.id},
     func: copyText,
-    args: [ lastResult ]
+    args: [ result ]
   });
 });
 
 function copyUrl(href) {
-  var shortened = shortenUrl(href);
+  let shortened = shortenUrl(href);
   copyText(shortened);
 }
 
