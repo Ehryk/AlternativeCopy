@@ -7,15 +7,14 @@
   "description": "Copies a shortened shareable link of the current tab's address to the clipboard (default: Alt+C, mac: Command+C).",
   "author": "Eric Menze",
 
-  "browser_action": {
+  "action": {
     "default_icon": "icon.png",
     "default_title": "Alternative Copy"
   },
   "offline_enabled": true,
 
   "background": {
-    "service_worker": ["worker.js"],
-    "persistent": false
+    "service_worker": "worker.js"
   },
   
   "icons": {
@@ -24,11 +23,12 @@
 
   "permissions": [
     "clipboardWrite",
-    "activeTab"
+    "activeTab",
+    "scripting"
   ],
 
   "commands": {
-    "_execute_browser_action": {
+    "_execute_action": {
       "suggested_key": {
         "default": "Alt+C",
         "mac": "Command+C"

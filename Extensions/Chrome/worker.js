@@ -1,15 +1,32 @@
-// background.js
+// worker.js (Manifest v3)
 
-platform = "";
+let platform;
+
+let lastHref;
+let lastUrl;
+let lastProtocol;
+let lastHost;
+let lastResult;
 
 chrome.runtime.getPlatformInfo(function(info) {
   platform = info.os;
 });
 
-// Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-  var href = tab.url;
-  copyUrl(href);
+async function getCurrentTab() {
+  let queryOptions = { active: true, currentWindow: true };
+  let [tab] = await chrome.tabs.query(queryOptions);
+  return tab;
+}
+
+// Listen for action
+chrome.action.onClicked.addListener((tab) => {
+  lastResult = shortenUrl(tab.url);
+  console.log(`Alternative Copy Invoked: ${lastResult}`);
+  chrome.scripting.executeScript({
+    target: {tabId: tab.id},
+    func: copyText,
+    args: [ lastResult ]
+  });
 });
 
 function copyUrl(href) {
@@ -18,7 +35,7 @@ function copyUrl(href) {
 }
 
 function copyText(text) {
-  console.log('URL to Copy: ' + text);
+  console.log(`Alternative Copy: ${text}`);
   _temp_element = document.createElement('textarea');
   _temp_element.value = text;
   _temp_element.setAttribute('readonly', '');
@@ -32,7 +49,9 @@ function copyText(text) {
 }
 
 function shortenUrl(href) {
-  var protocol = getProtocol(href);
+  let url = lastUrl = new URL(href);
+  let protocol = lastProtocol = url.protocol.toLowerCase();
+  let host = lastHost = url.hostname.toLowerCase();
 
   if (protocol === "file:") {
     // Handle File URLs
@@ -48,7 +67,6 @@ function shortenUrl(href) {
       href = href.replace(/\//g, "\\");
   } else {
     // Handle Web URLs
-    var host = getHost(href);
     if (host.indexOf("ebay") > -1) {
       // eBay
       href = href.replace(/(.*\/itm\/)([^/]*)\/(.*)/, '$1$3');
@@ -84,14 +102,6 @@ function shortenUrl(href) {
   return href;
 }
 
-function getProtocol(href){
-  return Object.assign(document.createElement('a'), { href: href }).protocol.toLowerCase();
-}
-
-function getHost(href){
-  return Object.assign(document.createElement('a'), { href: href }).host.toLowerCase();
-}
-
 function removeQueryString(href) {
   if (href.indexOf('?') > -1) {
     href = href.split('?')[0];
@@ -105,15 +115,3 @@ function removeAnchorTag(href) {
   }
   return href;
 }
-
-chrome.commands.onCommand.addListener(function(command) {
-  if (command === "copy-url") {
-    copyUrl(command.text);
-  }
-});
-
-chrome.commands.onCommand.addListener(function(command) {
-  if (command === "copy-text") {
-    copyText(command.text);
-  }
-});

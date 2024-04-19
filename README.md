@@ -1,5 +1,9 @@
 # Alternative Copy
-This is a tool that can be installed as an Extension (currently supported: Chrome) to map the keyboard shortcut Alt+C (Command+C for OSX) to copy the current address and apply helpful formatting.
+This is a tool that can be installed as an extension to map a keyboard shortcut to copy the current address and apply helpful formatting.
+
+ - Browsers Supported: Chrome
+ - Default Shortcut: Alt+C
+ - Default Shortcut (mac): Command+C
 
 ### Description
 
@@ -22,7 +26,7 @@ For file:// urls that are on your local hard drive, Alternative Copy will put th
 
 ### Version History
 
- - v2.0 2024.xx.xx Migrating to Manifest v3, service worker
+ - v2.0 2024.04.19 Migrating to Manifest v3, service worker
  - v1.6 2024.04.16 Added icon to manifest for Extensions page
  - v1.5 2024.04.14 Removing unused permission (ClipboardRead), explicit mac keybinding
  - v1.4 2022.12.07 Removing any hashtag / anchor tag content
