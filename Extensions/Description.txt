@@ -1,4 +1,4 @@
-This extension copies a shareable URL of the current tab to your clipboard. Many sites include long irrelevant strings of text in the URL bar that include tracking and advertising data that aren't friendly to share. Clicking the icon or pressing Alt+C will activate this extension, and the keyboard shortcut can be changed in your chrome://extensions/shortcuts page. Defaults to Option+C for OSX.
+This extension copies a shareable URL of the current tab to your clipboard. Many sites include long irrelevant strings of text in the URL bar that include tracking and advertising data that aren't friendly to share. Clicking the icon or pressing Alt+C will activate this extension, and the keyboard shortcut can be changed in your browser's extensions page. Defaults to Option+C for OSX.
 
 This extension removes the query string, and hashtag references, and will further remove irrelevant data on supported sites to get to a short URL more appropriate for sharing.
 

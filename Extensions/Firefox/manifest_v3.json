@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  
+  "name": "Alternative Copy",
+  "short_name": "Alt.Copy",
+  "version": "2.0",
+  
+  "author": "Eric Menze",
+  "description": "Copies a shortened shareable link of the current tab's address to the clipboard (default: Alt+C, mac: Option+C).",
+  "homepage_url": "https://github.com/Ehryk/AlternativeCopy",
+  
+  "permissions": [
+    "clipboardWrite",
+    "activeTab"
+  ],
+
+  "commands": {
+    "alternative-copy": {
+      "suggested_key": {
+        "default": "Alt+C"
+      },
+    "description": "Copies a shortened shareable link to the clipboard"
+    }
+  },
+  
+  "background": {
+    "scripts": ["background.js"],
+    "type": "module"
+  },
+  
+  "action": {
+    "default_icon": {
+      "128": "icon.png"
+    }
+  },
+
+  "icons": {
+    "128": "icon.png"
+  },
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "alternativecopy@ehryk.com"
+    }
+  }
+}
